@@ -105,3 +105,24 @@ else
 {
     Console.WriteLine("Слово не найдено");
 } 
+//Самостоятельное задание.Вариант 1. Слова с заданной частотой
+int CountFrequentWords(Dictionary<string, int> frequencies, int limit)
+{
+    int count = 0;
+
+    foreach (KeyValuePair<string, int> word in frequencies)
+    {
+        if (word.Value >= limit)
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
+Console.Write("Введите частоту: ");
+int limit = int.Parse(Console.ReadLine() ?? "1");
+
+int result = CountFrequentWords(frequencies, limit);
+
+Console.WriteLine($"Количество слов: {result}");
